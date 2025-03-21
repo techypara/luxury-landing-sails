@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Anchor, Car, Building } from 'lucide-react';
+import { Anchor, Gauge, Diamond } from 'lucide-react';
 
 const FeatureCard = ({ 
   icon: Icon, 
@@ -62,27 +62,27 @@ const WhyYacht63 = () => {
             Why Yacht63 TOV
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Experience the pinnacle of luxury with our exclusive offerings, combining the thrill of the sea and the power of Italian engineering.
+            Experience the pinnacle of maritime luxury with the Tecnomar for Lamborghini 63, a masterpiece of Italian engineering and design.
           </p>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
           <FeatureCard 
             icon={Anchor}
-            title="63-ft Tecnomar Lamborghini Yacht"
+            title="Exclusive Lamborghini Yacht"
             description="Experience the limited edition masterpiece, combining Lamborghini's design DNA with cutting-edge marine engineering."
           />
           
           <FeatureCard 
-            icon={Car}
-            title="Lamborghini Huracán & Urus"
-            description="Take your luxury experience from sea to land with our premium Lamborghini rentals, available for your entire Dubai stay."
+            icon={Gauge}
+            title="Unmatched Performance"
+            description="Powered by twin MAN V12 engines producing 2,000 horsepower, enjoy speeds of up to 60 knots with unparalleled stability."
           />
           
           <FeatureCard 
-            icon={Building}
-            title="Cruise Marina or Tour the City"
-            description="Whether it's exploring Dubai's iconic coastline or its luxurious cityscape, experience it all in elite style."
+            icon={Diamond}
+            title="Iconic Luxury"
+            description="Immerse yourself in pure Italian luxury with carbon fiber interiors, premium materials, and signature Lamborghini styling."
           />
         </div>
       </div>

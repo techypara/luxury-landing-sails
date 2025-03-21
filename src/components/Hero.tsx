@@ -36,12 +36,12 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-20 text-center px-4 luxury-container">
         <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 md:mb-6 animate-fade-in-up" style={{animationDelay: "0.3s"}}>
-          <span className="text-white">Set Sail or Drive in Style –</span> <br />
-          <span className="gold-text">Yacht & Lamborghini Experiences in Dubai</span>
+          <span className="text-white">Experience Maritime Excellence –</span> <br />
+          <span className="gold-text">Tecnomar for Lamborghini 63 in Dubai</span>
         </h1>
         
         <p className="text-xl md:text-2xl text-white mb-8 md:mb-10 animate-fade-in-up" style={{animationDelay: "0.6s"}}>
-          Luxury. Power. Unforgettable Views.
+          Luxury. Power. Unparalleled Design.
         </p>
         
         <a 
@@ -49,7 +49,7 @@ const Hero = () => {
           className="gold-button inline-block animate-fade-in-up"
           style={{animationDelay: "0.9s"}}
         >
-          Book Your Experience
+          Reserve Your Experience
         </a>
       </div>
       

@@ -4,6 +4,9 @@ import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import WhyYacht63 from '../components/WhyYacht63';
 import Gallery from '../components/Gallery';
+import InteriorGallery from '../components/InteriorGallery';
+import ExteriorGallery from '../components/ExteriorGallery';
+import KeyFeatures from '../components/KeyFeatures';
 import Booking from '../components/Booking';
 import FAQ from '../components/FAQ';
 import SocialBar from '../components/SocialBar';
@@ -12,7 +15,7 @@ import Footer from '../components/Footer';
 const Index = () => {
   useEffect(() => {
     // Set document title
-    document.title = "Yacht63 TOV - Luxury Yacht & Lamborghini Experiences in Dubai";
+    document.title = "Yacht63 TOV - Exclusive Tecnomar for Lamborghini 63 Experience in Dubai";
     
     // Initialize scroll animations
     const initScrollAnimations = () => {
@@ -69,6 +72,9 @@ const Index = () => {
       <SocialBar />
       <Hero />
       <WhyYacht63 />
+      <ExteriorGallery />
+      <InteriorGallery />
+      <KeyFeatures />
       <Gallery />
       <Booking />
       <FAQ />
