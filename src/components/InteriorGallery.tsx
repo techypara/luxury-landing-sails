@@ -1,23 +1,38 @@
-
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const interiorImages = [
   {
-    url: 'https://images.unsplash.com/photo-1560507308-6ed81bd86a08?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Luxurious Main Cabin'
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%281%29.jpeg',
+    caption: 'Lamborghini 63 Yacht - Exterior View'
   },
   {
-    url: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Carbon Fiber Cockpit'
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%2810%29.jpeg',
+    caption: 'Sleek Aerodynamic Design'
   },
   {
-    url: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Designer Lounge Area'
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%2813%29.jpeg',
+    caption: 'Stunning Dubai Waterfront View'
   },
   {
-    url: 'https://images.unsplash.com/photo-1577448441133-afdc5804c656?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Master Bedroom Suite'
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%2815%29.jpeg',
+    caption: 'Luxury Yacht Experience'
+  },
+  {
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%2816%29.jpeg',
+    caption: 'Signature Lamborghini Lines'
+  },
+  {
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%2819%29.jpeg',
+    caption: 'Premium Yacht Craftsmanship'
+  },
+  {
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%282%29.jpeg',
+    caption: 'Exclusive Dubai Yacht Experience'
+  },
+  {
+    url: 'https://vip.tov.ae/images/yacht63/img/EXTERIOR%20lamborghini%2063%20Dubai/yacht63%20Dubai%20Rent%20Lamborghini%20Yacht%20%2820%29.jpeg',
+    caption: 'Lamborghini Yacht at Marina'
   }
 ];
 
