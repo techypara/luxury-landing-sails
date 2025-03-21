@@ -72,9 +72,9 @@ const Index = () => {
       <SocialBar />
       <Hero />
       <WhyYacht63 />
+      <KeyFeatures />
       <ExteriorGallery />
       <InteriorGallery />
-      <KeyFeatures />
       <Gallery />
       <Booking />
       <FAQ />

@@ -1,27 +1,47 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { 
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext
+} from "@/components/ui/carousel";
 
+// Update with paths to the uploaded images
 const images = [
   {
-    url: 'https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Luxury Yacht Interior'
+    url: '/images/gallery/lamborghini-yacht-1.jpg',
+    caption: 'Tecnomar for Lamborghini 63 - Exterior View'
   },
   {
-    url: 'https://images.unsplash.com/photo-1583121274602-3e2820c69888?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Lamborghini Huracán'
+    url: '/images/gallery/lamborghini-yacht-2.jpg',
+    caption: 'Luxury Deck Space'
   },
   {
-    url: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Dubai Marina Skyline'
+    url: '/images/gallery/lamborghini-yacht-3.jpg',
+    caption: 'Dubai Marina Skyline Cruise'
   },
   {
-    url: 'https://images.unsplash.com/photo-1618825779286-b4922381416c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+    url: '/images/gallery/lamborghini-yacht-4.jpg',
+    caption: 'Sleek Yacht Design'
+  },
+  {
+    url: '/images/gallery/lamborghini-yacht-5.jpg',
+    caption: 'Exclusive Onboard Experience'
+  },
+  {
+    url: '/images/gallery/lamborghini-yacht-6.jpg',
+    caption: 'Premium Interior Finishes'
+  },
+  {
+    url: '/images/gallery/lamborghini-yacht-7.jpg',
     caption: 'Sunset Yacht Cruises'
   },
   {
-    url: 'https://images.unsplash.com/photo-1581465464149-ab9cd3a1d4c8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-    caption: 'Luxury Onboard Experience'
+    url: '/images/gallery/lamborghini-yacht-8.jpg',
+    caption: 'Luxury Navigation Experience'
   }
 ];
 
@@ -81,7 +101,7 @@ const Gallery = () => {
             Experience Luxury
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Browse through our gallery of exclusive experiences on land and sea.
+            Browse through our gallery of the exclusive Tecnomar for Lamborghini 63 yacht experience in Dubai.
           </p>
         </div>
         
@@ -109,6 +129,7 @@ const Gallery = () => {
                        neo-gold-blur flex items-center justify-center text-luxury-gold 
                        transition-all duration-300 hover:bg-luxury-gold/20"
             onClick={goToPrev}
+            aria-label="Previous image"
           >
             <ChevronLeft size={24} />
           </button>
@@ -118,24 +139,47 @@ const Gallery = () => {
                        neo-gold-blur flex items-center justify-center text-luxury-gold 
                        transition-all duration-300 hover:bg-luxury-gold/20"
             onClick={goToNext}
+            aria-label="Next image"
           >
             <ChevronRight size={24} />
           </button>
         </div>
         
         {/* Thumbnails */}
-        <div className="flex justify-center mt-6 space-x-2">
+        <div className="flex justify-center mt-6 space-x-2 overflow-x-auto py-2 px-4 max-w-full">
           {images.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 rounded-full transition-all duration-300 flex-shrink-0 ${
                 index === currentIndex 
                   ? 'bg-luxury-gold' 
                   : 'bg-luxury-gold/30 hover:bg-luxury-gold/50'
               }`}
               onClick={() => goToSlide(index)}
+              aria-label={`Go to image ${index + 1}`}
             ></button>
           ))}
+        </div>
+        
+        {/* Thumbnail Preview */}
+        <div className="mt-8 hidden md:block">
+          <div className="grid grid-cols-4 gap-3">
+            {images.slice(0, 4).map((image, index) => (
+              <div 
+                key={index}
+                className={`aspect-video rounded overflow-hidden cursor-pointer transition-all duration-300 hover:opacity-100 ${
+                  currentIndex === index ? 'ring-2 ring-luxury-gold opacity-100' : 'opacity-60'
+                }`}
+                onClick={() => goToSlide(index)}
+              >
+                <img 
+                  src={image.url} 
+                  alt={image.caption} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

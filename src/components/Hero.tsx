@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 
 const Hero = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   
   useEffect(() => {
     const handleScroll = () => {
@@ -12,26 +13,42 @@ const Hero = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
+
+    // Initialize video with proper settings
+    if (videoRef.current) {
+      videoRef.current.muted = true;
+      videoRef.current.autoplay = true;
+      videoRef.current.loop = true;
+      videoRef.current.play().catch(error => {
+        console.error("Video autoplay failed:", error);
+      });
+    }
+
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background overlay */}
-      <div className="absolute inset-0 bg-black/50 z-10"></div>
+      <div className="absolute inset-0 bg-black/60 z-10"></div>
       
-      {/* Parallax background */}
+      {/* Video background with parallax effect */}
       <div 
         ref={parallaxRef}
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1588345921523-c2dcdb7f1dcd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "120%",
-          width: "100%"
-        }}
-      ></div>
+        className="absolute inset-0 z-0 h-120 w-full"
+      >
+        <video 
+          ref={videoRef}
+          className="w-full h-full object-cover"
+          muted
+          autoPlay
+          loop
+          playsInline
+        >
+          <source src="/videos/lamborghini-yacht.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
       
       {/* Content */}
       <div className="relative z-20 text-center px-4 luxury-container">

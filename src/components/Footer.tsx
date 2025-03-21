@@ -1,7 +1,19 @@
 
 import { Smartphone, Mail, MapPin, Instagram, Youtube } from 'lucide-react';
 
+const services = [
+  "VIP Yacht Rental Dubai",
+  "Special Events",
+  "Luxury Yacht Rentals with Private Chef in Dubai",
+  "Lamborghini Yacht Rental Dubai",
+  "New Year's Eve",
+  "F1 VIP Tickets Abu Dhabi 2024",
+  "Brand New Yachts"
+];
+
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
+  
   return (
     <footer className="py-16 border-t border-luxury-gold/20 relative overflow-hidden">
       {/* Background elements */}
@@ -15,7 +27,7 @@ const Footer = () => {
           <div>
             <h3 className="text-luxury-gold text-xl font-playfair font-semibold mb-6">Yacht63 TOV</h3>
             <p className="text-gray-300 mb-4">
-              Yacht63 TOV provides premium Lamborghini yacht charters and luxury Lamborghini rentals in Dubai Marina and Palm Jumeirah.
+              Yacht63 TOV provides premium Lamborghini yacht charters and luxury experiences in Dubai Marina and Palm Jumeirah.
             </p>
             <p className="text-gray-300">
               Discover bespoke cruises, personalized concierge services, gourmet onboard catering, and unforgettable experiences from sea to city.
@@ -41,6 +53,17 @@ const Footer = () => {
           </div>
           
           <div>
+            <h3 className="text-luxury-gold text-xl font-playfair font-semibold mb-6">Our Services</h3>
+            <ul className="space-y-2">
+              {services.map((service, index) => (
+                <li key={index}>
+                  <a href="#" className="text-gray-300 hover:text-luxury-gold transition-colors duration-300">{service}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          
+          <div>
             <h3 className="text-luxury-gold text-xl font-playfair font-semibold mb-6">Contact Us</h3>
             <ul className="space-y-4">
               <li className="flex items-start">
@@ -59,44 +82,45 @@ const Footer = () => {
                 <MapPin className="text-luxury-gold mt-1 mr-3 flex-shrink-0" size={18} />
                 <span className="text-gray-300">Dubai Marina | Palm Jumeirah | JBR</span>
               </li>
+              <div className="flex space-x-4 mt-4">
+                <a 
+                  href="https://instagram.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full neo-gold-blur flex items-center justify-center transition-all duration-300 hover:bg-luxury-gold/20"
+                  aria-label="Instagram"
+                >
+                  <Instagram className="text-luxury-gold" size={20} />
+                </a>
+                
+                <a 
+                  href="https://youtube.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-full neo-gold-blur flex items-center justify-center transition-all duration-300 hover:bg-luxury-gold/20"
+                  aria-label="YouTube"
+                >
+                  <Youtube className="text-luxury-gold" size={20} />
+                </a>
+              </div>
             </ul>
-          </div>
-          
-          <div>
-            <h3 className="text-luxury-gold text-xl font-playfair font-semibold mb-6">Follow Us</h3>
-            <p className="text-gray-300 mb-4">
-              Stay updated with our latest experiences and offers on social media.
-            </p>
-            <div className="flex space-x-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full neo-gold-blur flex items-center justify-center transition-all duration-300 hover:bg-luxury-gold/20"
-                aria-label="Instagram"
-              >
-                <Instagram className="text-luxury-gold" size={20} />
-              </a>
-              
-              <a 
-                href="https://youtube.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full neo-gold-blur flex items-center justify-center transition-all duration-300 hover:bg-luxury-gold/20"
-                aria-label="YouTube"
-              >
-                <Youtube className="text-luxury-gold" size={20} />
-              </a>
-            </div>
           </div>
         </div>
         
-        <div className="mt-16 pt-8 border-t border-luxury-gold/10 text-center">
-          <p className="text-gray-400">
-            &copy; {new Date().getFullYear()} Yacht63 TOV. All rights reserved.
-            <span className="mx-2">|</span>
-            <span>Partnered with TOV Dubai for full-service luxury.</span>
-          </p>
+        <div className="mt-16 pt-8 border-t border-luxury-gold/10">
+          <div className="text-gray-400 text-sm">
+            <p className="mb-3">
+              &copy; {currentYear} Yacht63 TOV. All rights reserved.
+              <span className="mx-2">|</span>
+              <span>Partnered with TOV Dubai for full-service luxury.</span>
+            </p>
+            
+            <div className="mt-4 text-xs text-gray-500">
+              <p className="mb-2"><strong>Disclaimer:</strong> Tecnomar for Lamborghini 63 and Lamborghini are registered trademarks. Yacht63 TOV is not affiliated with, endorsed by, or officially connected to Automobili Lamborghini S.p.A. or Tecnomar.</p>
+              <p className="mb-2">All product names, logos, and brands are property of their respective owners. All images and videos displayed on this website are used for representational purposes only.</p>
+              <p>The media content on this website is either owned by Yacht63 TOV, used under license, or used for promotional purposes under fair use provisions. No copyright infringement is intended.</p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
