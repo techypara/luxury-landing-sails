@@ -1,5 +1,5 @@
 
-import { Smartphone, Mail, MapPin, Instagram, TiktokIcon, Youtube } from 'lucide-react';
+import { Smartphone, Mail, MapPin, Instagram, Youtube } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -76,16 +76,6 @@ const Footer = () => {
                 aria-label="Instagram"
               >
                 <Instagram className="text-luxury-gold" size={20} />
-              </a>
-              
-              <a 
-                href="https://tiktok.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-full neo-gold-blur flex items-center justify-center transition-all duration-300 hover:bg-luxury-gold/20"
-                aria-label="TikTok"
-              >
-                <TiktokIcon className="text-luxury-gold" size={20} />
               </a>
               
               <a 

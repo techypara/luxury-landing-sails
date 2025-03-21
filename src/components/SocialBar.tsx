@@ -1,5 +1,5 @@
 
-import { Instagram, TiktokIcon, Smartphone, Youtube } from 'lucide-react';
+import { Instagram, Smartphone, Youtube } from 'lucide-react';
 
 const SocialBar = () => {
   return (
@@ -15,19 +15,6 @@ const SocialBar = () => {
           <Instagram className="social-icon" />
           <span className="absolute left-full ml-2 px-2 py-1 text-sm neo-gold-blur rounded text-luxury-gold whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-300">
             Follow on Instagram
-          </span>
-        </a>
-        
-        <a 
-          href="https://tiktok.com" 
-          target="_blank" 
-          rel="noopener noreferrer"
-          className="group relative"
-          aria-label="TikTok"
-        >
-          <TiktokIcon className="social-icon" />
-          <span className="absolute left-full ml-2 px-2 py-1 text-sm neo-gold-blur rounded text-luxury-gold whitespace-nowrap opacity-0 pointer-events-none group-hover:opacity-100 transition-opacity duration-300">
-            Follow on TikTok
           </span>
         </a>
         
