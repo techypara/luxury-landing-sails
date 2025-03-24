@@ -76,19 +76,19 @@ const WhyYacht63 = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
           <FeatureCard 
             icon={SparkleIcon}
-            title="🔥 Sleek Design"
+            title="Sleek Design"
             description="Inspired by Lamborghini's most iconic sports cars, the Tecnomar 63 mirrors the same cutting-edge aesthetics — sharp contours, futuristic angles, and a carbon-fiber silhouette built for elegance and speed. It's not just design; it's an attitude."
           />
           
           <FeatureCard 
             icon={Gauge}
-            title="⚡ Powerful Performance"
+            title="Powerful Performance"
             description="Equipped with twin MAN V12 engines unleashing a staggering 2,000 horsepower, this beast dominates the sea at a thrilling top speed of 60 knots. It's not simply fast — it's the fastest in its class."
           />
           
           <FeatureCard 
             icon={Anchor}
-            title="🇮🇹 Italian Innovation"
+            title="Italian Innovation"
             description="Born from the DNA of Lamborghini and crafted in the spirit of performance and luxury, every detail of the Tecnomar 63 reflects precision, passion, and prestige — a vessel designed for those who dare to redefine limits."
           />
         </div>
