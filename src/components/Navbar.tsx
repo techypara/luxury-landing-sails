@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -13,19 +12,27 @@ const Navbar = () => {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  },);
 
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'py-3 neo-gold-blur' 
+        isScrolled
+          ? 'py-3 neo-gold-blur'
           : 'py-5 bg-transparent'
       }`}
     >
       <div className="luxury-container flex justify-between items-center">
-        <a href="#" className="text-xl md:text-2xl font-playfair font-bold gold-text">
-          yacht63.tov.ae
+        <a href="#" className="flex items-center">
+          <img
+            src="https://vip.tov.ae/images/yacht63/img/logo-yacht63.png"
+            alt="Yacht63 Logo"
+            className="h-8 md:h-10" // Adjust the height as needed
+          />
+          {/* You can optionally keep the text next to the logo */}
+          {/* <span className="text-xl md:text-2xl font-playfair font-bold gold-text ml-2">
+            yacht63.tov.ae
+          </span> */}
         </a>
 
         {/* Desktop Navigation */}
@@ -40,7 +47,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Navigation Toggle */}
-        <button 
+        <button
           className="md:hidden gold-text"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -52,36 +59,36 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full neo-gold-blur py-4 animate-fade-in-up">
           <div className="luxury-container flex flex-col space-y-4">
-            <a 
-              href="#why" 
+            <a
+              href="#why"
               className="text-white hover:gold-text transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Why Yacht63
             </a>
-            <a 
-              href="#gallery" 
+            <a
+              href="#gallery"
               className="text-white hover:gold-text transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Gallery
             </a>
-            <a 
-              href="#booking" 
+            <a
+              href="#booking"
               className="text-white hover:gold-text transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               Booking
             </a>
-            <a 
-              href="#faq" 
+            <a
+              href="#faq"
               className="text-white hover:gold-text transition-all duration-300 py-2"
               onClick={() => setIsMenuOpen(false)}
             >
               FAQ
             </a>
-            <a 
-              href="#booking" 
+            <a
+              href="#booking"
               className="gold-button self-start"
               onClick={() => setIsMenuOpen(false)}
             >
