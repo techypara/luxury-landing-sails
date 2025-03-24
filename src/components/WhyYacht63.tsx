@@ -1,6 +1,6 @@
 
 import { useEffect, useRef } from 'react';
-import { Anchor, Gauge, Diamond } from 'lucide-react';
+import { Anchor, Gauge, SparkleIcon } from 'lucide-react';
 
 const FeatureCard = ({ 
   icon: Icon, 
@@ -59,30 +59,37 @@ const WhyYacht63 = () => {
       <div className="luxury-container">
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-playfair font-bold gold-text mb-6">
-            Why Yacht63 TOV
+            Why Choose the Lamborghini Yacht?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Experience the pinnacle of maritime luxury with the Tecnomar for Lamborghini 63, a masterpiece of Italian engineering and design.
+            Where Supercar Heritage Meets Maritime Excellence
           </p>
+          
+          <div className="mt-8 text-gray-300 text-lg max-w-4xl mx-auto">
+            <p className="mb-6">
+              Step aboard the Lamborghini Tecnomar 63 — a bold fusion of speed, innovation, and unmistakable Italian craftsmanship. 
+              This isn't just a yacht; it's a floating supercar, engineered to stir your soul with every wave it cuts through.
+            </p>
+          </div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 stagger-animation">
           <FeatureCard 
-            icon={Anchor}
-            title="Exclusive Lamborghini Yacht"
-            description="Experience the limited edition masterpiece, combining Lamborghini's design DNA with cutting-edge marine engineering."
+            icon={SparkleIcon}
+            title="🔥 Sleek Design"
+            description="Inspired by Lamborghini's most iconic sports cars, the Tecnomar 63 mirrors the same cutting-edge aesthetics — sharp contours, futuristic angles, and a carbon-fiber silhouette built for elegance and speed. It's not just design; it's an attitude."
           />
           
           <FeatureCard 
             icon={Gauge}
-            title="Unmatched Performance"
-            description="Powered by twin MAN V12 engines producing 2,000 horsepower, enjoy speeds of up to 60 knots with unparalleled stability."
+            title="⚡ Powerful Performance"
+            description="Equipped with twin MAN V12 engines unleashing a staggering 2,000 horsepower, this beast dominates the sea at a thrilling top speed of 60 knots. It's not simply fast — it's the fastest in its class."
           />
           
           <FeatureCard 
-            icon={Diamond}
-            title="Iconic Luxury"
-            description="Immerse yourself in pure Italian luxury with carbon fiber interiors, premium materials, and signature Lamborghini styling."
+            icon={Anchor}
+            title="🇮🇹 Italian Innovation"
+            description="Born from the DNA of Lamborghini and crafted in the spirit of performance and luxury, every detail of the Tecnomar 63 reflects precision, passion, and prestige — a vessel designed for those who dare to redefine limits."
           />
         </div>
       </div>
