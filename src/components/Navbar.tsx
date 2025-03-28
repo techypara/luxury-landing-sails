@@ -33,7 +33,7 @@ const Navbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center space-x-8">
           <a href="#why" className="text-white hover:gold-text transition-all duration-300">Why Yacht63</a>
-          <a href="#gallery" className="text-white hover:gold-text transition-all duration-300">Galleryy</a>
+          <a href="#gallery" className="text-white hover:gold-text transition-all duration-300">Galleryyy</a>
           <a href="#booking" className="text-white hover:gold-text transition-all duration-300">Booking</a>
           <a href="#faq" className="text-white hover:gold-text transition-all duration-300">FAQ</a>
           <a href="#booking" className="gold-button">
