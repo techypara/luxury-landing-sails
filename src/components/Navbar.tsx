@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -24,15 +25,9 @@ const Navbar = () => {
     >
       <div className="luxury-container flex justify-between items-center">
         <a href="#" className="flex items-center">
-          <img
-            src="https://vip.tov.ae/images/yacht63/img/logo-yacht63.png"
-            alt="Yacht63 Logo"
-            className="h-8 md:h-10" // Adjust the height as needed
-          />
-          {/* You can optionally keep the text next to the logo */}
-          {/* <span className="text-xl md:text-2xl font-playfair font-bold gold-text ml-2">
-            yacht63.tov.ae
-          </span> */}
+          <span className="text-xl md:text-2xl font-playfair font-bold gold-text">
+            Yacht63.tov.ae
+          </span>
         </a>
 
         {/* Desktop Navigation */}
