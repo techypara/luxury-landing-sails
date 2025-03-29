@@ -1,13 +1,19 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { toast } from "sonner";
+import { format } from "date-fns";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
+import { Button } from "@/components/ui/button";
+import { CalendarIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 const Booking = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     whatsapp: '',
-    date: '',
+    date: undefined as Date | undefined,
     experienceType: 'yacht',
     specialRequests: ''
   });
@@ -23,25 +29,59 @@ const Booking = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleDateSelect = (date: Date | undefined) => {
+    setFormData(prev => ({
+      ...prev,
+      date
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
-      toast.success("Your booking request has been submitted successfully! Our team will contact you shortly.");
-      setIsSubmitting(false);
+    try {
+      // Format the date properly for the email
+      const formattedDate = formData.date ? format(formData.date, 'PPP') : '';
       
-      // Reset form
-      setFormData({
-        name: '',
-        email: '',
-        whatsapp: '',
-        date: '',
-        experienceType: 'yacht',
-        specialRequests: ''
-      });
-    }, 1500);
+      // Prepare email content
+      const emailContent = {
+        to: 'yacht63@tov.ae',
+        subject: `New Booking Request: ${formData.experienceType}`,
+        body: `
+          Name: ${formData.name}
+          Email: ${formData.email}
+          WhatsApp: ${formData.whatsapp}
+          Date: ${formattedDate}
+          Experience: ${formData.experienceType}
+          Special Requests: ${formData.specialRequests}
+        `
+      };
+      
+      console.log("Sending booking request to:", emailContent.to);
+      console.log("Email content:", emailContent);
+      
+      // In a real application, you would send this data to your server
+      // For now, we'll simulate a successful submission
+      setTimeout(() => {
+        toast.success("Your booking request has been submitted successfully! Our team will contact you shortly.");
+        setIsSubmitting(false);
+        
+        // Reset form
+        setFormData({
+          name: '',
+          email: '',
+          whatsapp: '',
+          date: undefined,
+          experienceType: 'yacht',
+          specialRequests: ''
+        });
+      }, 1500);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error("There was an error submitting your booking request. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   useEffect(() => {
@@ -130,15 +170,29 @@ const Booking = () => {
             
             <div>
               <label htmlFor="date" className="luxury-label">Pickup Date</label>
-              <input
-                id="date"
-                name="date"
-                type="date"
-                required
-                value={formData.date}
-                onChange={handleChange}
-                className="luxury-input"
-              />
+              <Popover>
+                <PopoverTrigger asChild>
+                  <Button
+                    variant="outline"
+                    className={cn(
+                      "w-full justify-start text-left font-normal bg-gray-900/50 border-gray-700 hover:bg-gray-800",
+                      !formData.date && "text-muted-foreground"
+                    )}
+                  >
+                    <CalendarIcon className="mr-2 h-4 w-4" />
+                    {formData.date ? format(formData.date, "PPP") : <span>Select date</span>}
+                  </Button>
+                </PopoverTrigger>
+                <PopoverContent className="w-auto p-0 bg-gray-900 border-gray-700">
+                  <Calendar
+                    mode="single"
+                    selected={formData.date}
+                    onSelect={handleDateSelect}
+                    initialFocus
+                    className="p-3 pointer-events-auto bg-gray-900 text-white"
+                  />
+                </PopoverContent>
+              </Popover>
             </div>
             
             <div>
