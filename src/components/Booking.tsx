@@ -129,11 +129,11 @@ const Booking = () => {
             </div>
             
             <div>
-              <label htmlFor="date" className="luxury-label">Preferred Date & Time</label>
+              <label htmlFor="date" className="luxury-label">Pickup Date</label>
               <input
                 id="date"
                 name="date"
-                type="datetime-local"
+                type="date"
                 required
                 value={formData.date}
                 onChange={handleChange}
